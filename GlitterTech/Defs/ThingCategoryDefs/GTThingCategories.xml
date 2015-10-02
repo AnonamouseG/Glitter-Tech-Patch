@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ThingCategoryDefs>
+
+
+
+      <ThingCategoryDef>
+        <defName>GlitterTech</defName>
+        <label>Glitter Tech</label>
+        <parent>WeaponsRanged</parent>
+      </ThingCategoryDef>
+	  
+	  <ThingCategoryDef>
+    <defName>GlitterAdvancedProstheses</defName>
+    <label>glitter advanced bionics</label>
+    <parent>BodyPartsAndImplants</parent>
+  </ThingCategoryDef>
+  
+  <ThingCategoryDef>
+    <defName>GlitterSyntheticOrgans</defName>
+    <label>advanced synthetic organs</label>
+    <parent>BodyPartsAndImplants</parent>
+  </ThingCategoryDef>
+
+	
+	
+</ThingCategoryDefs>

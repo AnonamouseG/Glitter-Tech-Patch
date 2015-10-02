@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FactionDefs>
+
+	<FactionDef>
+		<defName>OrionCo</defName>
+		<label>Orion Corporation</label>
+		<description>Orion Corporation</description>
+		<pawnsPlural>Orion Corp Soldiers</pawnsPlural>
+		<requiredCountAtGameStart>1</requiredCountAtGameStart>
+		<fixedName>Orion Installation</fixedName>
+		<raidCommonality>35</raidCommonality>
+		<canSiege>true</canSiege>
+		<canStageAttacks>true</canStageAttacks>
+		<leaderTitle>Director</leaderTitle>
+		<startingGoodwill>
+			<min>-100</min>
+			<max>40</max>
+		</startingGoodwill>
+		<techLevel>Spacer</techLevel>
+		<backstoryCategory>Raider</backstoryCategory>
+		<canFlee>false</canFlee>
+		<hidden>false</hidden>
+		<hairTags>
+			<li>Urban</li>
+		</hairTags>
+		<naturalColonyGoodwill>
+			<min>-100</min>
+			<max>-10</max>
+		</naturalColonyGoodwill>
+		<pawnGroupMakers>
+			<li>
+				<options>
+					<li>
+						<selectionWeight>100</selectionWeight>
+						<kind>OCSoldier</kind>
+					</li>
+					<li>
+						<selectionWeight>80</selectionWeight>
+						<kind>OCPeaceKeeper</kind>
+					</li>
+					<li>
+						<selectionWeight>60</selectionWeight>
+						<kind>OCHeavy</kind>
+					</li>
+					<li>
+						<selectionWeight>50</selectionWeight>
+						<kind>OCTank</kind>
+					</li>
+				</options>
+			</li>
+		</pawnGroupMakers>
+		<homeIconPath>World/FactionHomes/DefaultHome</homeIconPath>
+		<homeIconColor>(150,150,150)</homeIconColor>
+	</FactionDef>
+
+</FactionDefs>

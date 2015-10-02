@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ThingDefs>
+
+
+	<ThingDef Name="BaseGun" Abstract="True">
+		<category>Item</category>
+		<thingClass>ThingWithComps</thingClass>
+		<equipmentType>Primary</equipmentType>
+		<pathCost>10</pathCost>
+		<useHitPoints>True</useHitPoints>
+		<selectable>True</selectable>
+		<graphicData>
+		<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+		</graphicData>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>1</DeteriorationRate>
+			<SellPriceFactor>0.25</SellPriceFactor>
+		</statBases>
+		<altitudeLayer>Item</altitudeLayer>
+		<alwaysHaulable>True</alwaysHaulable>
+		<tickerType>Never</tickerType>
+		<techLevel>Midworld</techLevel>
+		<thingCategories>
+			<li>WeaponsRanged</li>
+		</thingCategories>
+		<inspectorTabs>
+			<li>ITab_Art</li>
+		</inspectorTabs>
+		<comps>
+			<li>
+				<compClass>CompForbiddable</compClass>
+			</li>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li>
+				<compClass>CompArt</compClass>
+				<nameMaker>NamerGun</nameMaker>
+				<descriptionMaker>ArtWeaponGun</descriptionMaker>
+				<minQualityForArtistic>Excellent</minQualityForArtistic>
+			</li>
+		</comps>
+		<smeltProducts>
+			<SteelBar>10</SteelBar>
+		</smeltProducts>
+	</ThingDef>
+
+	<ThingDef Name="BaseBullet" Abstract="True">
+		<category>Projectile</category>
+		<tickerType>Normal</tickerType>
+		<altitudeLayer>Projectile</altitudeLayer>
+		<thingClass>Bullet</thingClass>
+		<label>bullet</label>
+		<useHitPoints>False</useHitPoints>
+		<neverMultiSelect>True</neverMultiSelect>
+		<graphicData>
+		<shaderType>Transparent</shaderType>
+		</graphicData>
+	</ThingDef>
+
+	<!-- ================= Bomb mortar ================= -->
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_OCTankShell</defName>
+		<label>explosive mortar shell</label>
+		<graphicData>
+		<texPath>Things/Projectile/ShellBomb</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<thingClass>Projectile_Explosive</thingClass>
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>15</damageAmountBase>
+			<speed>80</speed>
+			<explosionRadius>1.5</explosionRadius>
+			<flyOverhead>true</flyOverhead>
+			<soundHitThickRoof>ArtilleryHitThickRoof</soundHitThickRoof>
+			<soundExplode>MortarBomb_Explode</soundExplode>
+			<soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+			<soundAmbient>MortarRound_Ambient</soundAmbient>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseGun">
+		<defName>Gun_OCTurret</defName>
+		<label>inferno cannon</label>
+		<description>Incendiary-shot mini-artillery device. Mechanoid-built.</description>
+		<graphicData>
+		<texPath>Things/Item/Equipment/OrionCorp/OCTankTurret</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+			<AccuracyTouch>0.79</AccuracyTouch>
+			<AccuracyShort>0.42</AccuracyShort>
+			<AccuracyMedium>0.18</AccuracyMedium>
+			<AccuracyLong>0.06</AccuracyLong>
+			<RangedWeapon_Cooldown>2.4</RangedWeapon_Cooldown>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<destroyOnDrop>True</destroyOnDrop>
+		<menuHidden>True</menuHidden>
+		<weaponTags>
+			<li>OCTank</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<projectileDef>Bullet_OCTankShell</projectileDef>
+				<forcedMissRadius>3.5</forcedMissRadius>
+				<ai_IsIncendiary>true</ai_IsIncendiary>
+				<warmupTicks>100</warmupTicks>
+				<range>120</range>
+				<burstShotCount>1</burstShotCount>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<soundCast>TCannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+	</ThingDef>
+
+</ThingDefs>

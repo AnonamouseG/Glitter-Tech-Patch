@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ThingDefs>
+
+	<ThingDef Name="BasePawn" Abstract="True">
+    <thingClass>Pawn</thingClass>
+    <category>Pawn</category>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Pawn</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <hasTooltip>true</hasTooltip>
+    <soundImpactDefault>BulletImpactFlesh</soundImpactDefault>
+    <inspectorTabs>
+      <li>ITab_Pawn_Health</li>
+      <li>ITab_Pawn_Needs</li>
+      <li>ITab_Pawn_Character</li>
+      <li>ITab_Pawn_Training</li>
+      <li>ITab_Pawn_Gear</li>
+      <li>ITab_Pawn_Guest</li>
+      <li>ITab_Pawn_Prisoner</li>
+    </inspectorTabs>
+    <comps>
+      <li>
+        <compClass>CompAttachBase</compClass>
+      </li>
+    </comps>
+    <drawGUIOverlay>true</drawGUIOverlay>
+  </ThingDef>
+
+
+
+	<ThingDef ParentName="BasePawn" Name="BaseMechanoid" Abstract="True">
+    <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+    <statBases>
+      <Flammability>0</Flammability>
+      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+      <ComfyTemperatureMax>250</ComfyTemperatureMax>
+    </statBases>
+    <race>
+      <mechanoid>true</mechanoid>
+      <needsRest>false</needsRest>
+      <hasGenders>false</hasGenders>
+      <isFlesh>false</isFlesh>
+      <diet>NeverEats</diet>
+    </race>
+  </ThingDef>
+
+
+	<ThingDef ParentName="BaseMechanoid">
+		<defName>Race_ReplicatorSmall</defName>
+		<label>replicator</label>
+		<description>A tiny metallic spider. Weak on it's own, but is typically found in massive hordes.</description>
+		<statBases>
+			<MoveSpeed>6</MoveSpeed>
+			<ArmorRating_Blunt>-0.1</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+			<MeatAmount>30</MeatAmount>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_MeleeAttack</verbClass>
+				<defaultCooldownTicks>200</defaultCooldownTicks>
+				<meleeDamageBaseAmount>1</meleeDamageBaseAmount>
+				<meleeDamageDef>Cut</meleeDamageDef>
+				<linkedBodyPartsGroup>Claws</linkedBodyPartsGroup>
+			</li>
+		</verbs>
+		<race>
+			<thinkTree>Replicator</thinkTree>
+			<intelligence>ToolUser</intelligence>
+			<body>MechanicalReplicatorSmall</body>
+			<baseBodySize>0.2</baseBodySize>
+			<baseHealthScale>0.1</baseHealthScale>
+			<lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Centipede_Call</soundCall>
+          <soundAngry>Pawn_Mech_Centipede_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundCallIntervalRange>
+        <min>1000</min>
+        <max>2000</max>
+      </soundCallIntervalRange>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+    </race>
+		<butcherProducts>
+			<Steel>4</Steel>
+			<Plasteel>2</Plasteel>
+		</butcherProducts>
+	</ThingDef>
+
+</ThingDefs>

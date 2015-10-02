@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<WorkGivers>
+
+<!-- ============= Fabricating ============= -->
+
+  <WorkGiverDef>
+    <defName>DoBillsMatterfab</defName>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Crafting</workType>
+    <priorityInType>90</priorityInType>
+    <singleBillGiverDef>Matterfab</singleBillGiverDef>
+    <verb>fabricate</verb>
+    <gerund>fabricating</gerund>
+	<requiredCapacities>
+		<li>Manipulation</li>
+	</requiredCapacities>
+  </WorkGiverDef>
+
+</WorkGivers>

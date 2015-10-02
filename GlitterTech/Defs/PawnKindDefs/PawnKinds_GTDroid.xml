@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PawnKindDefs>
+
+	<PawnKindDef>
+		<defName>DroidPawn</defName>
+		<label>droid</label>
+		<race>GTDroid</race>
+		<combatPower>30</combatPower>
+		<defaultFactionType>Colony</defaultFactionType>
+		<baseRecruitDifficulty>10</baseRecruitDifficulty>
+		<backstoryCategory>Civil</backstoryCategory>
+		<isFighter>false</isFighter>
+		<backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
+		<forceNormalGearQuality>true</forceNormalGearQuality>
+		<lifeStages>
+		<li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/Scyther</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.8, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+		</li>
+		</lifeStages>
+	</PawnKindDef>
+
+
+</PawnKindDefs>

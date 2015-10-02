@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Resources>
+
+	<ThingDef Name="ResourceBase" Abstract="True">
+		<thingClass>ThingWithComps</thingClass>
+		<label>unspecified resource</label>
+		<category>Item</category>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<useHitPoints>true</useHitPoints>
+		<selectable>true</selectable>
+		<altitudeLayer>Item</altitudeLayer>
+		<stackLimit>75</stackLimit>
+		<comps>
+			<li>
+				<compClass>CompForbiddable</compClass>
+			</li>
+		</comps>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<rotatable>false</rotatable>
+		<pathCost>15</pathCost>
+	</ThingDef>
+
+	<ThingDef Name="ResourceVerbBase" ParentName="ResourceBase" Abstract="True">
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Neolithic</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+	
+	<!--=============== AlphaPoly ====================-->
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>AlphaPoly</defName>
+		<label>Alpha Poly</label>
+		<description>The first iteration in artificially constructed, atomically assembled dense matter. This man made, and extremely rare material, only assembled in high end matter assemblers is good for building structures in the chronospheres of stars.</description>
+		<graphicData>
+		<texPath>Things/Item/Resource/APoly</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>First</resourceReadoutPriority>
+		<soundInteract>Silver_Drop</soundInteract>
+		<soundDrop>Silver_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<resourceReadoutAlwaysShow>false</resourceReadoutAlwaysShow>
+		<statBases>
+			<SellPriceFactor>0.25</SellPriceFactor>
+			<MarketValue>26</MarketValue>
+			<Flammability>0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+			<MeleeWeapon_Cooldown>1.0</MeleeWeapon_Cooldown>
+			<SharpDamageMultiplier>1.8</SharpDamageMultiplier>
+			<BluntDamageMultiplier>1.8</BluntDamageMultiplier>
+		</statBases>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+		<stuffProps>
+			<categories>
+				<li>Metallic</li>
+			</categories>
+			<color>(100,60,100)</color>
+			<constructEffect>ConstructMetal</constructEffect>
+			<soundImpactStuff>BulletImpactMetal</soundImpactStuff>
+			<statOffsets>
+				<Beauty>16</Beauty>
+			</statOffsets>
+			<statFactors>
+				<MaxHitPoints>4</MaxHitPoints>
+				<Flammability>0</Flammability>
+				<Beauty>16</Beauty>
+				<DoorOpenSpeed>5</DoorOpenSpeed>
+				<BedRestEffectiveness>3.0</BedRestEffectiveness>
+				<WorkToMake>15.0</WorkToMake>
+				<MeleeWeapon_Cooldown>1.0</MeleeWeapon_Cooldown>
+			</statFactors>
+		</stuffProps>
+	</ThingDef>
+
+	<!--=============== BetaPoly ====================-->
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>BetaPoly</defName>
+		<label>Beta Poly</label>
+		<description>The second iteration in artificially constructed, atomically assembled dense matter. This man made, and extremely rare material, this material is too expensive to be mass produced, and has only been used as material for indestructable space suits, unstoppable kinetic slugs and containment for miniture black holes.</description>
+		<graphicData>
+		<texPath>Things/Item/Resource/BPoly</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>First</resourceReadoutPriority>
+		<soundInteract>Silver_Drop</soundInteract>
+		<soundDrop>Silver_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<resourceReadoutAlwaysShow>false</resourceReadoutAlwaysShow>
+		<statBases>
+			<SellPriceFactor>0.25</SellPriceFactor>
+			<MarketValue>28</MarketValue>
+			<Flammability>0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+			<MeleeWeapon_Cooldown>0.8</MeleeWeapon_Cooldown>
+			<SharpDamageMultiplier>1.9</SharpDamageMultiplier>
+			<BluntDamageMultiplier>1.9</BluntDamageMultiplier>
+		</statBases>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+		<stuffProps>
+			<categories>
+				<li>Metallic</li>
+			</categories>
+			<color>(100,60,60)</color>
+			<constructEffect>ConstructMetal</constructEffect>
+			<soundImpactStuff>BulletImpactMetal</soundImpactStuff>
+			<statOffsets>
+				<Beauty>20</Beauty>
+			</statOffsets>
+			<statFactors>
+				<MaxHitPoints>4.5</MaxHitPoints>
+				<Flammability>0</Flammability>
+				<Beauty>30</Beauty>
+				<WorkToMake>100</WorkToMake>
+				<DoorOpenSpeed>5</DoorOpenSpeed>
+				<MeleeWeapon_Cooldown>0.8</MeleeWeapon_Cooldown>
+			</statFactors>
+		</stuffProps>
+	</ThingDef>
+
+	<!--=============== Components ====================-->
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>MagneticCoil</defName>
+		<label>Magnetic Coil</label>
+		<description>An advanced magnetic coil. Beyond the fabrication skills of anyone but an Electromagnetic physicist.</description>
+		<graphicData>
+		<texPath>Things/Item/Resource/MagneticCoil</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<statBases>
+			<SellPriceFactor>0.25</SellPriceFactor>
+			<MarketValue>1200</MarketValue>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+	</ThingDef>
+
+
+</Resources>

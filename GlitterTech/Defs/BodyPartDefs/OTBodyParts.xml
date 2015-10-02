@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+	<activities>
+		<li>Manipulation_way1</li>
+	</activities>
+	
+	means that this body part is responsible for Manipulation activity in group "way1".
+	Efficiency of Pawn activity X is minimum of all X activity groups efficiency values.
+	X activity group efficiency is average value of all body parts efficiency values responsible for this activity in this group.
+	
+	So if there are body parts responsible for (1)Manipulation_foo, (2)Manipulation_foo, (1)Manipulation_bar, (2)Manipulation_bar
+	then Manipulation efficiency is min(avg((1)Manipulation_foo, (2)Manipulation_foo), avg((1)Manipulation_bar, (2)Manipulation_bar))
+-->
+
+<BodyPartDefs>
+ 
+  <BodyPartDef>
+    <defName>Chassis</defName>
+    <label>chassis</label>
+	<hitPoints>10</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>Hull</defName>
+    <label>hull</label>
+	<hitPoints>8</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+  </BodyPartDef>
+    
+  <BodyPartDef>
+    <defName>Bracing</defName>
+    <label>bracing</label>
+	<hitPoints>2</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>true</skinCovered>
+	<isSolid>true</isSolid>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>FissionCell</defName>
+    <label>fission cell</label>
+	<hitPoints>1</hitPoints>
+	<frostbiteVulnerability>1</frostbiteVulnerability>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Consciousness_brain</li>
+	</activities>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>SensoryActuator</defName>
+    <label>sensory actuator</label>
+	<hitPoints>1</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>MainALU</defName>
+    <label>main ALU</label>
+	<hitPoints>1</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Consciousness_brain</li>
+		<li>Moving_brain</li>
+		<li>Manipulation_brain</li>
+		<li>Talking_brain</li>
+	</activities>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>OcularSensor</defName>
+    <label>ocular sensor</label>
+	<hitPoints>2</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<useDestroyedOutLabel>true</useDestroyedOutLabel>
+	<activities>
+		<li>Sight_source</li>
+	</activities>
+  </BodyPartDef>
+    
+  <BodyPartDef>
+    <defName>AudioSensor</defName>
+    <label>audio sensor</label>
+	<hitPoints>2</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Hearing_source</li>
+	</activities>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>FrontLeftActuator</defName>
+    <label>front left actuator</label>
+	<hitPoints>2</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Manipulation_way0</li>
+	</activities>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>FrontLeftLeg</defName>
+    <label>front left leg</label>
+	<hitPoints>4</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Moving_leftWay1</li>
+	</activities>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>FrontLeftClaw</defName>
+    <label>front left claw</label>
+	<hitPoints>4</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Manipulation_tool</li>
+	</activities>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>FrontRightActuator</defName>
+    <label>front right actuator</label>
+	<hitPoints>2</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Manipulation_way0</li>
+	</activities>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>FrontRightLeg</defName>
+    <label>front right leg</label>
+	<hitPoints>4</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Moving_rightWay1</li>
+	</activities>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>FrontRightClaw</defName>
+    <label>front right claw</label>
+	<hitPoints>4</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Manipulation_tool</li>
+	</activities>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>MiddleLeftActuator</defName>
+    <label>middle left actuator</label>
+	<hitPoints>2</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Manipulation_way0</li>
+	</activities>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>MiddleLeftLeg</defName>
+    <label>middle left leg</label>
+	<hitPoints>4</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Moving_leftWay1</li>
+	</activities>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>MiddleLeftClaw</defName>
+    <label>middle left claw</label>
+	<hitPoints>4</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Manipulation_tool</li>
+	</activities>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>MiddleRightActuator</defName>
+    <label>middle right actuator</label>
+	<hitPoints>2</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Manipulation_way0</li>
+	</activities>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>MiddleRightLeg</defName>
+    <label>middle right leg</label>
+	<hitPoints>4</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Moving_rightWay1</li>
+	</activities>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>MiddleRightClaw</defName>
+    <label>middle right claw</label>
+	<hitPoints>4</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Manipulation_tool</li>
+	</activities>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>RearLeftActuator</defName>
+    <label>rear left actuator</label>
+	<hitPoints>2</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Manipulation_way0</li>
+	</activities>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>RearLeftLeg</defName>
+    <label>rear left leg</label>
+	<hitPoints>4</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Moving_leftWay1</li>
+	</activities>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>RearLeftClaw</defName>
+    <label>rear left claw</label>
+	<hitPoints>4</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Manipulation_tool</li>
+	</activities>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>RearRightActuator</defName>
+    <label>rear right actuator</label>
+	<hitPoints>2</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Manipulation_way0</li>
+	</activities>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>RearRightLeg</defName>
+    <label>rear right leg</label>
+	<hitPoints>4</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Moving_rightWay1</li>
+	</activities>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>RearRightClaw</defName>
+    <label>rear right claw</label>
+	<hitPoints>4</hitPoints>
+	<oldInjuryBaseChance>0</oldInjuryBaseChance>
+	<skinCovered>false</skinCovered>
+	<isSolid>true</isSolid>
+	<activities>
+		<li>Manipulation_tool</li>
+	</activities>
+  </BodyPartDef>
+  
+	<!--TankChassis====================================================================-->
+	
+	<BodyPartDef>
+		<defName>TChassis</defName>
+		<label>tank chassis</label>
+		<hitPoints>60</hitPoints>
+		<oldInjuryBaseChance>0</oldInjuryBaseChance>
+		<skinCovered>false</skinCovered>
+		<isSolid>true</isSolid>
+	</BodyPartDef>
+	
+	<BodyPartDef>
+		<defName>THull</defName>
+		<label>hull</label>
+		<hitPoints>100</hitPoints>
+		<oldInjuryBaseChance>0</oldInjuryBaseChance>
+		<skinCovered>false</skinCovered>
+		<isSolid>true</isSolid>
+	</BodyPartDef>
+	
+	<BodyPartDef>
+		<defName>TBracing</defName>
+		<label>bracing</label>
+		<hitPoints>40</hitPoints>
+		<oldInjuryBaseChance>0</oldInjuryBaseChance>
+		<skinCovered>false</skinCovered>
+		<isSolid>true</isSolid>
+	</BodyPartDef>
+	
+	<BodyPartDef>
+		<defName>Engine</defName>
+		<label>engine</label>
+		<hitPoints>20</hitPoints>
+		<frostbiteVulnerability>5</frostbiteVulnerability>
+		<oldInjuryBaseChance>0</oldInjuryBaseChance>
+		<skinCovered>true</skinCovered>
+		<isSolid>true</isSolid>
+		<activities>
+			<li>Consciousness_brain</li>
+		</activities>
+	</BodyPartDef>
+	
+	<BodyPartDef>
+		<defName>TurretActuator</defName>
+		<label>turret actuator</label>
+		<hitPoints>40</hitPoints>
+		<oldInjuryBaseChance>0</oldInjuryBaseChance>
+		<skinCovered>true</skinCovered>
+		<isSolid>true</isSolid>
+	</BodyPartDef>
+	
+	<BodyPartDef>
+		<defName>CannonLoader</defName>
+		<label>cannon loader</label>
+		<hitPoints>20</hitPoints>
+		<oldInjuryBaseChance>0</oldInjuryBaseChance>
+		<skinCovered>true</skinCovered>
+		<isSolid>true</isSolid>
+	</BodyPartDef>
+	
+	<BodyPartDef>
+		<defName>AmmoRack</defName>
+		<label>ammo rack</label>
+		<hitPoints>10</hitPoints>
+		<oldInjuryBaseChance>0</oldInjuryBaseChance>
+		<skinCovered>true</skinCovered>
+		<isSolid>true</isSolid>
+	</BodyPartDef>
+		
+	<BodyPartDef>
+		<defName>TurretHull</defName>
+		<label>turret hull</label>
+		<hitPoints>100</hitPoints>
+		<oldInjuryBaseChance>0</oldInjuryBaseChance>
+		<skinCovered>false</skinCovered>
+		<isSolid>true</isSolid>
+	</BodyPartDef>
+	
+	<BodyPartDef>
+		<defName>LeftTrack</defName>
+		<label>left track</label>
+		<hitPoints>40</hitPoints>
+		<oldInjuryBaseChance>0</oldInjuryBaseChance>
+		<skinCovered>false</skinCovered>
+		<isSolid>true</isSolid>
+		<activities>
+			<li>Moving_leftWay1</li>
+		</activities>
+	</BodyPartDef>
+	
+	<BodyPartDef>
+		<defName>RightTrack</defName>
+		<label>right track</label>
+		<hitPoints>40</hitPoints>
+		<oldInjuryBaseChance>0</oldInjuryBaseChance>
+		<skinCovered>false</skinCovered>
+		<isSolid>true</isSolid>
+		<activities>
+			<li>Moving_rightWay1</li>
+		</activities>
+	</BodyPartDef>
+	
+	<BodyPartDef>
+		<defName>TrackChain</defName>
+		<label>track chain</label>
+		<hitPoints>20</hitPoints>
+		<oldInjuryBaseChance>0</oldInjuryBaseChance>
+		<skinCovered>false</skinCovered>
+		<isSolid>true</isSolid>
+	</BodyPartDef>
+	
+	<BodyPartDef>
+		<defName>Fender</defName>
+		<label>track fender</label>
+		<hitPoints>100</hitPoints>
+		<oldInjuryBaseChance>0</oldInjuryBaseChance>
+		<skinCovered>false</skinCovered>
+		<isSolid>true</isSolid>
+	</BodyPartDef>
+	
+	<BodyPartDef>
+		<defName>LargeGear</defName>
+		<label>track gear</label>
+		<hitPoints>20</hitPoints>
+		<oldInjuryBaseChance>0</oldInjuryBaseChance>
+		<skinCovered>false</skinCovered>
+		<isSolid>true</isSolid>
+		<activities>
+			<li>Manipulation_way0</li>
+		</activities>
+	</BodyPartDef>
+
+</BodyPartDefs>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResearchProjectDefs>
+
+	<ResearchProjectDef>
+		<defName>HighPoweredAIMortars</defName>
+		<label>High Powered AI mortars</label>
+		<description>Allows you to constuct high powered AI mortars.</description>
+		<totalCost>3000</totalCost>
+		<prerequisites>
+			<li>SpecializedAITurrets</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>HighPoweredAITurrets</defName>
+		<label>High Powered AI turrets</label>
+		<description>Allows you to constuct high powered AI turrets.</description>
+		<totalCost>3000</totalCost>
+		<prerequisites>
+			<li>SpecializedAITurrets</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>ElectroPlasmatics</defName>
+		<label>Electro plasmatics</label>
+		<description>Allows you to direct plasma using magnetic fields. Unlocks very high teir technology that wields the extreme power of plasma.</description>
+		<totalCost>3000</totalCost>
+		<prerequisites>
+			<li>PowerIV</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+
+</ResearchProjectDefs>

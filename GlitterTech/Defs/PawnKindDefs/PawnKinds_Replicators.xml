@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PawnKindDefs>
+
+
+
+	<PawnKindDef>
+		<defName>ReplicatorSmall</defName>
+		<label>replicator</label>
+		<race>Race_ReplicatorSmall</race>
+		<combatPower>200</combatPower>
+		<defaultFactionType>Replicator</defaultFactionType>
+		<aiAvoidCover>true</aiAvoidCover>
+		<isFighter>true</isFighter>
+		<lifeStages>
+		<li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Replicator/Replicatorsm</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.3, 0.3)</volume>
+          </shadowData>
+		</bodyGraphicData>
+		</li>
+		</lifeStages>
+	</PawnKindDef>
+
+</PawnKindDefs>

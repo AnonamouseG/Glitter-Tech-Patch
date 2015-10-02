@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ThingDefs>
+
+	<ThingDef Name="BodyPartBase" Abstract="True">
+    <label>body part</label>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <tickerType>Never</tickerType>
+    <alwaysHaulable>true</alwaysHaulable>
+    <isBodyPartOrImplant>true</isBodyPartOrImplant>
+    <tradeTags>
+      <li>AdvancedProstheses</li>
+    </tradeTags>
+    <comps>
+      <li>
+        <compClass>CompForbiddable</compClass>
+      </li>
+    </comps>
+    <thingCategories>
+      <li>GlitterAdvancedProstheses</li>
+    </thingCategories>
+    <pathCost>10</pathCost>
+  </ThingDef>
+
+	<!-- artificial - bionics -->
+
+	<ThingDef ParentName="BodyPartBase">
+		<defName>OCExo</defName>
+		<label>Orion Exoskeleton</label>
+		<description>A standard issue Orion Corporation exoskeleton. Equiped by most Orion security forces, this all purpose exoskeleton gives them a cheap and capable edge against their competitors.</description>
+		<graphicData>
+		<texPath>Things/Item/BodyPart/ArtificialOrgan</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>4500</MarketValue>
+		</statBases>
+		<techHediffsTags>
+			<li>OCBodyParts</li>
+		</techHediffsTags>
+	</ThingDef>
+
+</ThingDefs>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ThingDefs>
+
+
+
+	<ThingDef Name="BuildingBase" Abstract="True">
+		<category>Building</category>
+		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+		<selectable>true</selectable>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<repairEffect>Repair</repairEffect>
+		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		<filthLeaving>BuildingRubble</filthLeaving>
+	</ThingDef>
+
+
+
+	<!-- ========================= Matter fabricator ==========================-->
+	<ThingDef ParentName="BuildingBase">
+		<DefName>Matterfab</DefName>
+		<label>Matter fabricator</label>
+		<ThingClass>Building_WorkTable</ThingClass>
+		<Description>The forefront of quantum thermodynamics and plasma spectrometry, this machine disassembles elements into base subatomic particles and re-assembles them into powerful artificial elements.</Description>
+		<graphicData>
+		<texPath>Things/Building/Production/MatterFab</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<drawSize>(7,2)</drawSize>
+		</graphicData>
+		<CostList>
+			<SteelBar>650</SteelBar>
+			<PlasteelBar>150</PlasteelBar>
+			<Uranium>5</Uranium>
+			<MagneticCoil>2</MagneticCoil>
+			<Electronics>35</Electronics>
+		</CostList>
+		<AltitudeLayer>Waist</AltitudeLayer>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToMake>5000</WorkToMake>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<Size>(7,2)</Size>
+		<DesignationCategory>ProductionWeaponsArmor</DesignationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<recipes>
+			<li>ProduceAPoly</li>
+			<li>ProduceBPoly</li>
+			<li>MakeArmorVest</li>
+			<li>MakePersonalShield</li>
+			<li>MakePsychicFoilHelmet</li>
+			<li>MakeMilitaryHelmet</li>
+			<li>MakeKevlarHelmet</li>
+			<li>MakePowerArmorHelmet</li>
+			<li>MakePowerArmorVest</li>
+		</recipes>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<comps>
+			<li>
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>5000</basePowerConsumption>
+				<startElectricalFires>true</startElectricalFires>
+			</li>
+			<li>
+				<compClass>CompGlower</compClass>
+				<glowRadius>8</glowRadius>
+				<glowColor>(0,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<building>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+			<heatPerTickWhileWorking>1.5</heatPerTickWhileWorking>
+			<soundAmbient>MatterFab</soundAmbient>
+		</building>
+		<researchPrerequisite>CraftingIV</researchPrerequisite>
+	</ThingDef>
+
+
+</ThingDefs>

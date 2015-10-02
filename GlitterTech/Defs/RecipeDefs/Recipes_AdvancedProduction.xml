@@ -1,0 +1,661 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RecipeDefs>
+
+  <!-- ========================= Polys ==========================-->
+  <RecipeDef>
+    <defName>ProduceAPoly</defName>
+    <label>artificially assemble Alpha Poly</label>
+    <description>Use heat and strong electromagnets to assemble artifical elements from Vancidium and Uranium</description>
+    <jobString>Fabricating Alpha Poly from Vancidium.</jobString>
+    <workAmount>5000</workAmount>
+    <workSpeedStat>SmeltingSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Vancidium</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <products>
+      <AlphaPoly>5</AlphaPoly>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Vancidium</li>
+		<li>Uranium</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <workSkill>Crafting</workSkill>
+  </RecipeDef>
+  
+  <RecipeDef>
+    <defName>ProduceBPoly</defName>
+    <label>artificially assemble Beta Poly</label>
+    <description>Use heat and strong electromagnets to assemble artifical elements from Alpha Poly, Uranium and Glass</description>
+    <jobString>Fabricating Beta Poly.</jobString>
+    <workAmount>5000</workAmount>
+    <workSpeedStat>SmeltingSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AlphaPoly</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Glass</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <products>
+      <BetaPoly>1</BetaPoly>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>AlphaPoly</li>
+		<li>Uranium</li>
+		<li>Glass</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <workSkill>Crafting</workSkill>
+  </RecipeDef>
+
+  
+    <!-- ========================= Robotic Assembler ==========================-->
+  
+  <RecipeDef>
+    <defName>BuildMagneticCoil</defName>
+    <label>Assemble magnetic coils</label>
+    <description>Assemble magnetic coils</description>
+    <jobString>Assembling Magnetic coils</jobString>
+    <workAmount>2400</workAmount>
+    <workSpeedStat>SmeltingSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+	<recipeUsers>
+         <li>TableSmithing</li>
+      </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Electronics</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Vancidium</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <products>
+      <MagneticCoil>1</MagneticCoil>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Electronics</li>
+		<li>Vancidium</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <workSkill>Crafting</workSkill>
+  </RecipeDef>
+  
+  <RecipeDef Abstract="True" Name="RecipeBionicProsthesis">
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <soundWorking>Recipe_Smith</soundWorking>
+	  <unfinishedThingDef>UnfinishedProsthesis</unfinishedThingDef>
+	  <effectWorking>Smith</effectWorking>
+      <workSkill>Crafting</workSkill>
+      <workAmount>8000</workAmount>
+	  <allowMixingIngredients>true</allowMixingIngredients>
+	  <recipeUsers>
+         <li>Matterfab</li>
+      </recipeUsers>
+      <skillRequirements>
+         <li>
+            <skill>Crafting</skill>
+            <minLevel>15</minLevel>
+         </li>
+      </skillRequirements>
+   </RecipeDef>
+  
+  
+  <RecipeDef ParentName="RecipeBionicProsthesis">
+      <defName>CreateGTEar</defName>
+      <label>Craft GT advanced bionic ear</label>
+      <description>Crafts an advanced bionic ear from bionic ears.</description>
+      <jobString>Crafting bionic.</jobString>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>BionicEar</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>BionicEar</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>Biomatter</li>
+               </thingDefs>
+            </filter>
+            <count>15</count>
+         </li>
+      </ingredients>
+      <fixedIngredientFilter>
+         <thingDefs>
+            <li>BionicEar</li>
+			<li>Biomatter</li>
+         </thingDefs>
+      </fixedIngredientFilter>
+      <products>
+         <GTEar>1</GTEar>
+      </products>
+   </RecipeDef>
+   
+   <RecipeDef ParentName="RecipeBionicProsthesis">
+      <defName>CreateGTEye</defName>
+      <label>Craft GT advanced bionic eye</label>
+      <description>Crafts an advanced bionic eye from bionic eyes.</description>
+      <jobString>Crafting bionic.</jobString>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>BionicEye</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>BionicEye</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>Biomatter</li>
+               </thingDefs>
+            </filter>
+            <count>15</count>
+         </li>
+      </ingredients>
+      <fixedIngredientFilter>
+         <thingDefs>
+            <li>BionicEye</li>
+			<li>Biomatter</li>
+         </thingDefs>
+      </fixedIngredientFilter>
+      <products>
+         <GTEye>1</GTEye>
+      </products>
+   </RecipeDef>
+   
+   <RecipeDef ParentName="RecipeBionicProsthesis">
+      <defName>CreateGTArm</defName>
+      <label>Craft GT advanced bionic arm</label>
+      <description>Crafts an GT advanced bionic arm from bionic arms.</description>
+      <jobString>Crafting bionic.</jobString>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>BionicArm</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>BionicArm</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>Biomatter</li>
+               </thingDefs>
+            </filter>
+            <count>15</count>
+         </li>
+      </ingredients>
+      <fixedIngredientFilter>
+         <thingDefs>
+            <li>BionicArm</li>
+			<li>Biomatter</li>
+         </thingDefs>
+      </fixedIngredientFilter>
+      <products>
+         <GTArm>1</GTArm>
+      </products>
+   </RecipeDef>
+   
+   <RecipeDef ParentName="RecipeBionicProsthesis">
+      <defName>CreateGTLeg</defName>
+      <label>Craft GT advanced bionic leg</label>
+      <description>Crafts an GT advanced bionic leg from bionic legs.</description>
+      <jobString>Crafting bionic.</jobString>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>BionicLeg</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>BionicLeg</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>Biomatter</li>
+               </thingDefs>
+            </filter>
+            <count>15</count>
+         </li>
+      </ingredients>
+      <fixedIngredientFilter>
+         <thingDefs>
+            <li>BionicLeg</li>
+			<li>Biomatter</li>
+         </thingDefs>
+      </fixedIngredientFilter>
+      <products>
+         <GTLeg>1</GTLeg>
+      </products>
+   </RecipeDef>
+   
+   <RecipeDef ParentName="RecipeBionicProsthesis">
+      <defName>CreateGTHeart</defName>
+      <label>Craft cybernetic heart</label>
+      <description>Crafts a cybernetic heart from synthetic hearts.</description>
+      <jobString>Crafting bionic.</jobString>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>SyntheticHeart</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>SyntheticHeart</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>Biomatter</li>
+               </thingDefs>
+            </filter>
+            <count>15</count>
+         </li>
+      </ingredients>
+      <fixedIngredientFilter>
+         <thingDefs>
+            <li>SyntheticHeart</li>
+			<li>Biomatter</li>
+         </thingDefs>
+      </fixedIngredientFilter>
+      <products>
+         <GTHeart>1</GTHeart>
+      </products>
+   </RecipeDef>
+   
+   <RecipeDef ParentName="RecipeBionicProsthesis">
+      <defName>CreateGTLung</defName>
+      <label>Craft cybernetic lung</label>
+      <description>Crafts a cybernetic lung from synthetic lungs.</description>
+      <jobString>Crafting bionic.</jobString>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>SyntheticLung</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>SyntheticLung</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>Biomatter</li>
+               </thingDefs>
+            </filter>
+            <count>15</count>
+         </li>
+      </ingredients>
+      <fixedIngredientFilter>
+         <thingDefs>
+            <li>SyntheticLung</li>
+			<li>Biomatter</li>
+         </thingDefs>
+      </fixedIngredientFilter>
+      <products>
+         <GTLung>1</GTLung>
+      </products>
+   </RecipeDef>
+   
+   <RecipeDef ParentName="RecipeBionicProsthesis">
+      <defName>CreateGTKidney</defName>
+      <label>Craft cybernetic kidney</label>
+      <description>Crafts a cybernetic kidney from synthetic kidneys.</description>
+      <jobString>Crafting bionic.</jobString>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>SyntheticKidney</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>SyntheticKidney</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>Biomatter</li>
+               </thingDefs>
+            </filter>
+            <count>15</count>
+         </li>
+      </ingredients>
+      <fixedIngredientFilter>
+         <thingDefs>
+            <li>SyntheticKidney</li>
+			<li>Biomatter</li>
+         </thingDefs>
+      </fixedIngredientFilter>
+      <products>
+         <GTKidney>1</GTKidney>
+      </products>
+   </RecipeDef>
+   
+   <RecipeDef ParentName="RecipeBionicProsthesis">
+      <defName>CreateGTLiver</defName>
+      <label>Craft cybernetic liver</label>
+      <description>Crafts a cybernetic liver from synthetic livers.</description>
+      <jobString>Crafting bionic.</jobString>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>SyntheticLiver</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>SyntheticLiver</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>Biomatter</li>
+               </thingDefs>
+            </filter>
+            <count>15</count>
+         </li>
+      </ingredients>
+      <fixedIngredientFilter>
+         <thingDefs>
+            <li>SyntheticLiver</li>
+			<li>Biomatter</li>
+         </thingDefs>
+      </fixedIngredientFilter>
+      <products>
+         <GTLiver>1</GTLiver>
+      </products>
+   </RecipeDef>
+   
+   <RecipeDef ParentName="RecipeBionicProsthesis">
+      <defName>CreateGTStomach</defName>
+      <label>Craft cybernetic stomach</label>
+      <description>Crafts a cybernetic stomach from synthetic stomachs.</description>
+      <jobString>Crafting bionic.</jobString>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>SyntheticStomach</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>SyntheticStomach</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>Biomatter</li>
+               </thingDefs>
+            </filter>
+            <count>15</count>
+         </li>
+      </ingredients>
+      <fixedIngredientFilter>
+         <thingDefs>
+            <li>SyntheticStomach</li>
+			<li>Biomatter</li>
+         </thingDefs>
+      </fixedIngredientFilter>
+      <products>
+         <GTStomach>1</GTStomach>
+      </products>
+   </RecipeDef>
+   
+   <RecipeDef ParentName="RecipeBionicProsthesis">
+      <defName>CreateGTHand</defName>
+      <label>Craft GT advanced bionic hand</label>
+      <description>Crafts an GT advanced bionic hand from bionic hands.</description>
+      <jobString>Crafting bionic.</jobString>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>BionicHand</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>BionicHand</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>Biomatter</li>
+               </thingDefs>
+            </filter>
+            <count>15</count>
+         </li>
+      </ingredients>
+      <fixedIngredientFilter>
+         <thingDefs>
+            <li>BionicHand</li>
+			<li>Biomatter</li>
+         </thingDefs>
+      </fixedIngredientFilter>
+      <products>
+         <GTHand>1</GTHand>
+      </products>
+   </RecipeDef>
+   
+   <RecipeDef ParentName="RecipeBionicProsthesis">
+      <defName>CreateGTFoot</defName>
+      <label>Craft GT advanced bionic foot</label>
+      <description>Crafts an GT advanced bionic foot from bionic feet.</description>
+      <jobString>Crafting bionic.</jobString>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>BionicFoot</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>BionicFoot</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>Biomatter</li>
+               </thingDefs>
+            </filter>
+            <count>15</count>
+         </li>
+      </ingredients>
+      <fixedIngredientFilter>
+         <thingDefs>
+            <li>BionicHand</li>
+			<li>Biomatter</li>
+         </thingDefs>
+      </fixedIngredientFilter>
+      <products>
+         <GTFoot>1</GTFoot>
+      </products>
+   </RecipeDef>
+   
+   <RecipeDef ParentName="RecipeBionicProsthesis">
+      <defName>CreateGTDentures</defName>
+      <label>Craft GT advanced bionic dentures</label>
+      <description>Crafts an GT advanced bionic dentures from bionic jaws.</description>
+      <jobString>Crafting bionic.</jobString>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>BionicJaw</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>BionicJaw</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>Biomatter</li>
+               </thingDefs>
+            </filter>
+            <count>15</count>
+         </li>
+      </ingredients>
+      <fixedIngredientFilter>
+         <thingDefs>
+            <li>BionicJaw</li>
+			<li>Biomatter</li>
+         </thingDefs>
+      </fixedIngredientFilter>
+      <products>
+         <GTDentures>1</GTDentures>
+      </products>
+   </RecipeDef>
+  
+</RecipeDefs>

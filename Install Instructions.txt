@@ -1,0 +1,26 @@
+Important: You must apply this patch last when using the Rimsenal and Combat Realism Rimfire Project armory patches
+
+
+Install instructions:
+
+-Install Copy and paste and merge the folders provided in this patch into your mods folder. Overwrite all files when prompted.
+
+
+EXTREMELY IMPORTANT THAT YOU:
+
+-Install the new ModCinfig file provided in this patch, if you are only using this patch. here: 
+
+(WINDOWS: C:/Users/username/AppData/LocalLow/Ludeon Studios/RimWorld/Config)
+
+(MAC: Users/username/library/Application Support/RimWorld/Config)
+
+(LINUX: /home/username/.config/unity3d/Ludeon Studios/RimWorld/Config)
+
+-Done!
+
+
+IMPORTANT:
+
+When using Glitter tech patch with other patches you must apply this patch last, and it is advised that you manually activate this mod as the last thing you do before generating a new world.
+
+If applying the No Seeds Please Patch, apply The No Seeds Please Patch after the glitter tech patch.

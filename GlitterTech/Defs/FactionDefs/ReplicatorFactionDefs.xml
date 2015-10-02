@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FactionDefs>
+ 
+  <!-- Special non-humanoid factions -->
+
+  <FactionDef>
+    <defName>Replicator</defName>
+    <label>replicator horde</label>
+    <description>[DISABLED]A horde of ancient self-replicating machines.</description>
+    <pawnsPlural>replicators</pawnsPlural>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <fixedName>a replicator horde</fixedName>
+    <raidCommonality>25</raidCommonality>
+	<humanlikeFaction>false</humanlikeFaction>
+    <hidden>true</hidden>
+    <canFlee>false</canFlee>
+    <techLevel>Ultra</techLevel>
+	<earliestRaidDays>30</earliestRaidDays>
+    <startingGoodwill>
+      <min>-100</min>
+      <max>-100</max>
+    </startingGoodwill>
+    <naturalColonyGoodwill>
+      <min>-100</min>
+      <max>-100</max>
+    </naturalColonyGoodwill>
+	<pawnGroupMakers>
+	<li>
+		<options>
+			<li>
+			<selectionWeight>100</selectionWeight>
+			<kind>ReplicatorSmall</kind>
+			</li>
+		</options>
+	</li>
+	</pawnGroupMakers>
+    <homeIconPath>World/FactionHomes/DefaultHome</homeIconPath>
+    <homeIconColor>(150,150,150)</homeIconColor>
+  </FactionDef>
+
+
+
+</FactionDefs>

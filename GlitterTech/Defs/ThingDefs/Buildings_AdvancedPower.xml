@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Buildings>
+
+
+	<ThingDef Name="BuildingBase" Abstract="True">
+		<category>Building</category>
+		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+		<selectable>true</selectable>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<repairEffect>Repair</repairEffect>
+		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		<filthLeaving>BuildingRubble</filthLeaving>
+	</ThingDef>
+
+	<!--==================================PowerSource=====================================-->
+
+<ThingDef ParentName="BuildingBase">
+		<defName>XenonIonTurbine</defName>
+		<label>Xenon-Ion Turbine</label>
+		<thingClass>Building_PowerPlantSteam</thingClass>
+		<graphicData>
+		<texPath>Things/Building/Power/XenonIonTurbine</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<drawSize>(6,6)</drawSize>
+		</graphicData>
+		<altitudeLayer>BuildingTall</altitudeLayer>
+		<passability>Impassable</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<statBases>
+			<MaxHitPoints>400</MaxHitPoints>
+			<WorkToMake>9600</WorkToMake>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>Produces electricity by collecting trace Xenon from water and Ionizing it into plasma.
+Energy Output: 8200W</description>
+		<size>(6,6)</size>
+		<costList>
+			<SteelBar>500</SteelBar>
+			<Vancidium>10</Vancidium>
+			<Uranium>80</Uranium>
+			<MagneticCoil>2</MagneticCoil>
+		</costList>
+		<comps>
+			<li>
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>-8200</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+				<powerToggleable>false</powerToggleable>
+			</li>
+			<li>
+				<compClass>CompGlower</compClass>
+				<glowRadius>12</glowRadius>
+				<glowColor>(0,162,255,0)</glowColor>
+			</li>
+			<li>
+				<compClass>CompHeatPusher</compClass>
+				<heatPerSecond>48</heatPerSecond>
+				<heatPushMaxTemperature>28</heatPushMaxTemperature>
+			</li>
+		</comps>
+		<rotatable>false</rotatable>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<designationCategory>Power</designationCategory>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<building>
+			<soundAmbient>XITurbine</soundAmbient>
+			<ignoreNeedsPower>true</ignoreNeedsPower>
+		</building>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisite>ElectroPlasmatics</researchPrerequisite>
+	</ThingDef>
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>PlasmaReactor</defName>
+		<label>Plasma Fusion Reactor</label>
+		<thingClass>Building_PowerPlantSteam</thingClass>
+		<graphicData>
+		<texPath>Things/Building/Power/PlasmaReactor</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<drawSize>(8,8)</drawSize>
+		</graphicData>
+		<altitudeLayer>BuildingTall</altitudeLayer>
+		<passability>Impassable</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<statBases>
+			<MaxHitPoints>2500</MaxHitPoints>
+			<WorkToMake>25000</WorkToMake>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>Produces electricity by maintaining an electromagnetic funnel of super heated plasma. Similar to the process within a star, except smaller, hotter and more efficient. The heat reached is so intense it requires lining by near indestructable materials.
+Energy Output: 30000W</description>
+		<size>(8,8)</size>
+		<costList>
+			<SteelBar>1800</SteelBar>
+			<Vancidium>25</Vancidium>
+			<Uranium>150</Uranium>
+			<MagneticCoil>5</MagneticCoil>
+			<AlphaPoly>5</AlphaPoly>
+			<BetaPoly>1</BetaPoly>
+		</costList>
+		<comps>
+			<li>
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>-30000</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+				<powerToggleable>false</powerToggleable>
+			</li>
+			<li>
+				<compClass>CompGlower</compClass>
+				<glowRadius>24</glowRadius>
+				<glowColor>(255,255,0,0)</glowColor>
+			</li>
+			<li>
+				<compClass>CompHeatPusher</compClass>
+				<heatPerSecond>100</heatPerSecond>
+				<heatPushMaxTemperature>35</heatPushMaxTemperature>
+			</li>
+		</comps>
+		<rotatable>false</rotatable>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<designationCategory>Power</designationCategory>
+		<staticSunShadowHeight>2.0</staticSunShadowHeight>
+		<building>
+			<soundAmbient>PlasmaTurbine</soundAmbient>
+			<ignoreNeedsPower>true</ignoreNeedsPower>
+		</building>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisite>ElectroPlasmatics</researchPrerequisite>
+	</ThingDef>
+
+	<!--==================================Batteries=====================================-->
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>FissionBattery</defName>
+		<label>Fission Battery</label>
+		<thingClass>Building_Battery</thingClass>
+		<graphicData>
+		<texPath>Things/Building/Power/FissionBattery</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<altitudeLayer>BuildingTall</altitudeLayer>
+		<passability>Impassable</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<tickerType>Normal</tickerType>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToMake>1200</WorkToMake>
+			<Flammability>2.0</Flammability>
+			<Beauty>-6</Beauty>
+		</statBases>
+		<description>Stores electricity and recycles charge using fission processes. Slightly more efficient and stores four times as much. Warning - charged batteries tend to explode when heated or wet.</description>
+		<size>(2,2)</size>
+		<building>
+			<ignoreNeedsPower>true</ignoreNeedsPower>
+		</building>
+		<costList>
+			<SteelBar>150</SteelBar>
+			<Uranium>1</Uranium>
+			<MagneticCoil>1</MagneticCoil>
+		</costList>
+		<comps>
+			<li>
+				<compClass>CompPowerBattery</compClass>
+				<storedEnergyMax>4000</storedEnergyMax>
+				<efficiency>1.0</efficiency>
+				<startElectricalFires>true</startElectricalFires>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li>
+				<compClass>CompGlower</compClass>
+				<glowRadius>12</glowRadius>
+				<glowColor>(0,162,255,0)</glowColor>
+			</li>
+		</comps>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Power</designationCategory>
+		<staticSunShadowHeight>0.5</staticSunShadowHeight>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisite>PowerIV</researchPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>HeavyPowerConduit</defName>
+		<label>heavy power conduit</label>
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		<graphicData>
+		<texPath>Things/Building/Linked/PowerConduit_Atlas</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<color>(150,80,80)</color>
+		<linkType>Transmitter</linkType>
+		<linkFlags>
+			<li>PowerConduit</li>
+		</linkFlags>
+		</graphicData>
+		<blueprintGraphicData>
+		<texPath>Things/Building/Linked/PowerConduit_Blueprint_Atlas</texPath>
+		</blueprintGraphicData>
+		<uiIconPath>Things/Building/Linked/PowerConduit_MenuIcon</uiIconPath>
+		<building>
+			<isInert>true</isInert>
+			<ignoreNeedsPower>true</ignoreNeedsPower>
+			<isEdifice>false</isEdifice>
+		</building>
+		<altitudeLayer>FloorEmplacement</altitudeLayer>
+		<passability>Standable</passability>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<statBases>
+			<MaxHitPoints>350</MaxHitPoints>
+			<WorkToMake>135</WorkToMake>
+			<Flammability>0</Flammability>
+			<Beauty>-6</Beauty>
+		</statBases>
+		<description>A set of heavy electrical cables, very strong and non-flammable</description>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<costList>
+			<SteelBar>3</SteelBar>
+			<Vancidium>1</Vancidium>
+		</costList>
+		<comps>
+			<li>
+				<compClass>CompPowerTransmitter</compClass>
+				<transmitsPower>true</transmitsPower>
+			</li>
+		</comps>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Power</designationCategory>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisite>PowerI</researchPrerequisite>
+	</ThingDef>
+
+</Buildings>

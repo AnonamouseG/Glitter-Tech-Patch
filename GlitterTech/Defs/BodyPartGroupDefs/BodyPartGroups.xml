@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<BodyPartGroupDefs>
+
+  <BodyPartGroupDef>
+    <defName>FrontLeftLeg</defName>
+    <label>front left leg</label>
+  </BodyPartGroupDef>
+  
+  <BodyPartGroupDef>
+    <defName>FrontRightLeg</defName>
+    <label>front right leg</label>
+  </BodyPartGroupDef>
+  
+  <BodyPartGroupDef>
+    <defName>MiddleLeftLeg</defName>
+    <label>middle left leg</label>
+  </BodyPartGroupDef>
+  
+  <BodyPartGroupDef>
+    <defName>MiddleRightLeg</defName>
+    <label>middle right leg</label>
+  </BodyPartGroupDef>
+  
+  <BodyPartGroupDef>
+    <defName>RearLeftLeg</defName>
+    <label>rear left leg</label>
+  </BodyPartGroupDef>
+  
+  <BodyPartGroupDef>
+    <defName>RearRightLeg</defName>
+    <label>rear right leg</label>
+  </BodyPartGroupDef>
+  
+  <BodyPartGroupDef>
+    <defName>Claws</defName>
+    <label>claws</label>
+  </BodyPartGroupDef>
+
+</BodyPartGroupDefs>

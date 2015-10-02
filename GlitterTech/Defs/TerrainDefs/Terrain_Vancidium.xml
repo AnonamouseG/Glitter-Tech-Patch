@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TerrainDefs>
+
+	<TerrainDef Name="FloorBase" Abstract="True">
+	<layerable>true</layerable>
+		<affordances>
+			<li>Light</li>
+			<li>Heavy</li>
+			<li>SmoothHard</li>
+		</affordances>
+		<statBases>
+			<WorkToMake>135</WorkToMake>
+		</statBases>
+		<designationCategory>MetalFloors</designationCategory>
+		<Fertility>0</Fertility>
+		<constructEffect>ConstructDirt</constructEffect>
+		<AcceptTerrainSourceFilth>True</AcceptTerrainSourceFilth>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+	</TerrainDef>
+
+
+	<!-- ================= Tile ================= -->
+
+	<TerrainDef  ParentName="FloorBase" Name="GTTile" Abstract="True">
+		<RenderPrecedence>240</RenderPrecedence>
+		<Description>Tiles, for that Glitter world look.</Description>
+		<texturePath>Things/Building/Floor/TitaniumTile</texturePath>
+		<color>(255,255,255)</color>
+		<EdgeType>Hard</EdgeType>
+		<constructEffect>ConstructMetal</constructEffect>
+	</TerrainDef>
+
+	<TerrainDef  ParentName="GTTile">
+		<DefName>VancidiumTile</DefName>
+		<Label>Vancidium tile</Label>
+		<Description>Vancidium tiles, for that Glitter world look.</Description>
+		<color>(255,255,255)</color>
+		<statBases>
+			<WorkToMake>135</WorkToMake>
+			<Beauty>8</Beauty>
+		</statBases>
+		<CostList>
+			<Vancidium>3</Vancidium>
+		</CostList>
+		<ResearchPrerequisite>ElectricSmelting</ResearchPrerequisite>
+	</TerrainDef>
+
+	<TerrainDef  ParentName="GTTile">
+		<DefName>AlphaTile</DefName>
+		<Label>Alpha-Poly tile</Label>
+		<Description>Alpha-Poly tiles, for that alien spaceship look.</Description>
+		<color>(100,60,100)</color>
+		<statBases>
+			<WorkToMake>15</WorkToMake>
+			<Beauty>16</Beauty>
+		</statBases>
+		<CostList>
+			<AlphaPoly>3</AlphaPoly>
+		</CostList>
+		<ResearchPrerequisite>Machining</ResearchPrerequisite>
+	</TerrainDef>
+
+	<TerrainDef  ParentName="GTTile">
+		<DefName>BetaTile</DefName>
+		<Label>Beta-Poly tile</Label>
+		<Description>Beta-Poly tiles, for that alien spaceship look.</Description>
+		<color>(100,60,60)</color>
+		<statBases>
+			<WorkToMake>100</WorkToMake>
+			<Beauty>30</Beauty>
+		</statBases>
+		<CostList>
+			<BetaPoly>3</BetaPoly>
+		</CostList>
+		<ResearchPrerequisite>Machining</ResearchPrerequisite>
+	</TerrainDef>
+
+</TerrainDefs>

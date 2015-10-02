@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Buildings>
+
+
+	<ThingDef Name="BuildingBase" Abstract="True">
+		<category>Building</category>
+		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+		<selectable>true</selectable>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<repairEffect>Repair</repairEffect>
+	</ThingDef>
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>EMPCharge</defName>
+		<label>EMPD-1 charge</label>
+		<thingClass>Building_BlastingCharge</thingClass>
+		<graphicData>
+		<texPath>Things/Building/Terraforming/ImpactionCharge</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<shadowData>
+			<volume>(0.3, 0.6, 0.3)</volume>
+		</shadowData>
+		</graphicData>
+		<altitudeLayer>Waist</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<WorkToMake>800</WorkToMake>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>EMP Defense charge that detonates on command. Creates a powerful blast of electromagnetic enery, which blankets a large radius. Used for defense against robotic threats, and sometimes makes humans run in terror.
+Range: 51</description>
+		<comps>
+			<li>
+				<compClass>CompExplosive</compClass>
+				<explosiveRadius>50.9</explosiveRadius>
+				<explosiveDamageType>EMP</explosiveDamageType>
+			</li>
+			<li>
+				<compClass>CompGlower</compClass>
+				<glowRadius>4</glowRadius>
+				<glowColor>(0,0,217,0)</glowColor>
+			</li>
+		</comps>
+		<size>(1,1)</size>
+		<costList>
+			<Vancidium>15</Vancidium>
+			<MagneticCoil>1</MagneticCoil>
+			<EnergyPack>1</EnergyPack>		
+		</costList>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<researchPrerequisite>ElectroPlasmatics</researchPrerequisite>
+	</ThingDef>
+	<!--
+	<ThingDef ParentName="BuildingBase">
+		<defName>DepletedEMPCharge</defName>
+		<label>Depleted EMPD-1 charge</label>
+		<thingClass>Building_BlastingCharge</thingClass>
+		<graphicData>
+		<texPath>Things/Building/Terraforming/ImpactionCharge</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+		</shadowData>
+		</graphicData>
+		<altitudeLayer>Waist</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<WorkToMake>800</WorkToMake>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>A depleted EMPD-1 charge.</description>
+		<comps>
+			<li>
+				<compClass>CompGlower</compClass>
+				<glowRadius>1</glowRadius>
+				<glowColor>(255,0,0,0)</glowColor>
+			</li>
+		</comps>
+		<size>(1,1)</size>
+		<costList>
+			<Vancidium>15</Vancidium>
+			<MagneticCoil>1</MagneticCoil>
+			<Electronics>20</Electronics>			
+		</costList>
+		<filthLeaving>BuildingRubble</filthLeaving>
+		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<researchPrerequisite>ElectroPlasmatics</researchPrerequisite>
+	</ThingDef>
+	-->
+	<ThingDef ParentName="BuildingBase">
+		<defName>FissionBomb</defName>
+		<label>Napalm bomb</label>
+		<thingClass>Building_BlastingCharge</thingClass>
+		<graphicData>
+		<texPath>Things/Building/Terraforming/ImpactionCharge</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+		</shadowData>
+		</graphicData>
+		<altitudeLayer>Waist</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<WorkToMake>800</WorkToMake>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>Explosive defense charge that detonates on command. Creates a powerful blast of explosive enery, which blankets a large radius in flame. Used for defense against any threat, and sometimes makes humans run in terror.
+Range: 25</description>
+		<comps>
+			<li>
+				<compClass>CompExplosive</compClass>
+				<explosiveRadius>24.9</explosiveRadius>
+				<explosiveDamageType>Flame</explosiveDamageType>
+			</li>
+			<li>
+				<compClass>CompGlower</compClass>
+				<glowRadius>4</glowRadius>
+				<glowColor>(0,217,0,0)</glowColor>
+			</li>
+		</comps>
+		<size>(1,1)</size>
+		<costList>
+			<Vancidium>15</Vancidium>
+			<MagneticCoil>1</MagneticCoil>
+			<EnergyPack>1</EnergyPack>			
+		</costList>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<researchPrerequisite>ElectroPlasmatics</researchPrerequisite>
+	</ThingDef>
+	
+
+
+</Buildings>
